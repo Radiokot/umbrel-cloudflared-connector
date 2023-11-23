@@ -1,1 +1,1 @@
-echo "HTTP/1.1 202\nContent-Length: 0" | nc -lp 8018 -W 1 | head -1 | sed 's/POST \///; s/\sHTTP.*//'
+cat default-response | nc -lp 8018 -W 1 | head -1 | sed 's/POST \///; s/\sHTTP.*//'

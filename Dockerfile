@@ -11,7 +11,7 @@ RUN apk add --update --no-cache netcat-openbsd psmisc
 COPY --from=cloudflared /usr/local/bin/cloudflared ./cloudflared
 
 # copy the control scripts
-COPY accept.sh process.sh control-loop.sh ./
+COPY accept.sh default-response process.sh control-loop.sh ./
 
 # expose the control port
 EXPOSE 8018
