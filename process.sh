@@ -11,7 +11,7 @@ start_cfd()
 
 stop_cfd()
 {
-	killall -w -2 cloudflared
+	killall -w -2 cloudflared || echo "PROCESS: tunnel is already stopped"
 }
 
 read cmd
