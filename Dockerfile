@@ -1,5 +1,5 @@
 # get the cloudflared image
-FROM cloudflare/cloudflared:2024.1.0 as cloudflared
+FROM cloudflare/cloudflared:2023.10.0 as cloudflared
 
 # take the alpine image
 FROM alpine:3.18.4
