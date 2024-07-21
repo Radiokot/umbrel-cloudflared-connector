@@ -5,6 +5,7 @@ start_cfd()
 		--metrics \
 		0.0.0.0:$CLOUDFLARED_METRICS_PORT \
 		--no-autoupdate \
+		--management-diagnostics=false \
 		run \
 		&
 }
