@@ -12,7 +12,7 @@ start_cfd()
 
 stop_cfd()
 {
-	killall -w -2 cloudflared || echo "PROCESS: tunnel is already stopped"
+	timeout 3 killall -w -2 cloudflared 2>/dev/null || killall -9 cloudflared 2>/dev/null || echo "PROCESS: tunnel is already stopped"
 }
 
 read cmd
