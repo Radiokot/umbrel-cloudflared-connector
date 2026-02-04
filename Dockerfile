@@ -1,5 +1,5 @@
 # get the cloudflared image
-FROM cloudflare/cloudflared:2025.10.0 as cloudflared
+FROM cloudflare/cloudflared:2026.1.2 as cloudflared
 
 # take the alpine image
 FROM alpine:3.18.4
@@ -22,4 +22,3 @@ ENTRYPOINT ["/sbin/tini", "-g", "--"]
 
 # run the control loop
 CMD ["sh", "control-loop.sh"]
-
