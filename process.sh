@@ -7,6 +7,7 @@ start_cfd()
 	echo "--management-diagnostics=false" >> args
 
 	cat "$CLOUDFLARED_EXTRA_ARGS_FILE" >> args
+	echo >> args
 
 	echo "run" >> args
 
