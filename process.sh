@@ -1,12 +1,17 @@
 start_cfd()
 {
+	echo "tunnel" > args
+
+	echo "--metrics 0.0.0.0:$CLOUDFLARED_METRICS_PORT" >> args
+	echo "--no-autoupdate" >> args
+	echo "--management-diagnostics=false" >> args
+
+	cat "$CLOUDFLARED_EXTRA_ARGS_FILE" >> args
+
+	echo "run" >> args
+
 	TUNNEL_TOKEN=$(cat $CLOUDFLARED_TOKEN_FILE) \
-		./cloudflared tunnel \
-		--metrics \
-		0.0.0.0:$CLOUDFLARED_METRICS_PORT \
-		--no-autoupdate \
-		--management-diagnostics=false \
-		run \
+		xargs ./cloudflared < args \
 		&
 }
 
@@ -31,4 +36,3 @@ case $cmd in
 		start_cfd
 		;;
 esac
-

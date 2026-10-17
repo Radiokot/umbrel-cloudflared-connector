@@ -1,2 +1,4 @@
 cloudflared
 token
+args
+extra_args
