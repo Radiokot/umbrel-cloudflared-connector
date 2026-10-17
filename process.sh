@@ -10,10 +10,9 @@ start_cfd()
 	echo >> args
 
 	echo "run" >> args
+	echo "--token-file $CLOUDFLARED_TOKEN_FILE" >> args
 
-	TUNNEL_TOKEN=$(cat $CLOUDFLARED_TOKEN_FILE) \
-		xargs ./cloudflared < args \
-		&
+	xargs ./cloudflared < args &
 }
 
 stop_cfd()
